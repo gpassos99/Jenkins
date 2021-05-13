@@ -8,9 +8,10 @@ pipeline {
           stage('Install') {
                      steps {
                           sh "mvn clean install"
-                     }           post {
+                     }
+                     post {
                                     always {
-                                                       junit '**/target/*-reports/TEST-*.xml'
+                                          junit '**/target/*-reports/TEST-*.xml'
                                     }
                      }
           }
